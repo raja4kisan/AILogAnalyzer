@@ -189,23 +189,27 @@ GET /api/LogAnalyzer/supported-log-types
 
 ```
 Log Analyzer AI/
-??? Controllers/
-?   ??? LogAnalyzerController.cs      # API endpoints
-??? Models/
-?   ??? LogAnalysisRequest.cs         # Request model
-?   ??? LogAnalysisResponse.cs        # Response model
-?   ??? GeminiRequest.cs              # Gemini API request
-?   ??? GeminiResponse.cs             # Gemini API response
-??? Services/
-?   ??? ILogAnalyzerService.cs        # Service interface
-?   ??? GeminiLogAnalyzerService.cs   # AI integration logic
-??? wwwroot/
-?   ??? index.html                    # Main UI
-?   ??? styles.css                    # Styling
-?   ??? app.js                        # Frontend logic
-??? Program.cs                         # App configuration
-??? appsettings.json                   # Configuration
-??? LogAnalyzer.API.csproj            # Project file
+├── Controllers/
+│   └── LogAnalyzerController.cs      # API endpoints
+├── Models/
+│   ├── LogAnalysisRequest.cs         # Request model
+│   ├── LogAnalysisResponse.cs        # Response model
+│   ├── GeminiRequest.cs              # Gemini API request
+│   └── GeminiResponse.cs             # Gemini API response
+├── Services/
+│   ├── ILogAnalyzerService.cs        # Service interface
+│   └── GeminiLogAnalyzerService.cs   # AI integration logic
+├── docs/                             # Project documentation and history
+│   ├── CHANGELOG.md
+│   ├── CONFIGURATION.md
+│   └── ...                           # Other project guides
+├── wwwroot/
+│   ├── index.html                    # Main UI
+│   ├── styles.css                    # Styling
+│   └── app.js                        # Frontend logic
+├── Program.cs                         # App configuration
+├── appsettings.json                   # Configuration (Template)
+└── LogAnalyzer.API.csproj            # Project file
 ```
 
 ## ?? UI Features
