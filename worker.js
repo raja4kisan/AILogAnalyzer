@@ -45,23 +45,21 @@ export default {
       }
     }
 
-    // Default route: Health check or info
-    return new Response('AI Log Analyzer API is running. Point your frontend to /api/LogAnalyzer/analyze', {
-      headers: { 'Content-Type': 'text/plain' },
-    });
+    // Default route: Serve static assets from wwwroot
+    return env.ASSETS.fetch(request);
   },
 };
 
 /**
- * Core analysis logic (Ported from C#)
+ * Core analysis logic (Ported from C# for xAI)
  */
 async function analyzeLogs(logs, logType, env) {
-  const apiKey = env.OPENROUTER_API_KEY;
-  const model = env.OPENROUTER_MODEL || 'openai/gpt-3.5-turbo';
-  const baseUrl = 'https://openrouter.ai/api/v1/chat/completions';
+  const apiKey = env.XAI_API_KEY;
+  const model = env.XAI_MODEL || 'grok-4-1-fast';
+  const baseUrl = 'https://api.x.ai/v1/chat/completions';
 
   if (!apiKey) {
-    throw new Error('OPENROUTER_API_KEY environment variable is not set');
+    throw new Error('XAI_API_KEY environment variable is not set');
   }
 
   // Quick Pattern Detection
@@ -127,8 +125,6 @@ Output ONLY the JSON object.`;
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
-      'HTTP-Referer': 'https://github.com/raja4kisan/AILogAnalyzer',
-      'X-Title': 'AI Log Analyzer',
     },
     body: JSON.stringify({
       model: model,
@@ -136,13 +132,14 @@ Output ONLY the JSON object.`;
         { role: 'system', content: 'You are a professional log analysis assistant. Provide analysis in pure JSON format.' },
         { role: 'user', content: prompt }
       ],
-      response_format: { type: 'json_object' }
+      stream: false,
+      temperature: 0
     }),
   });
 
   if (!response.ok) {
     const errorBody = await response.text();
-    throw new Error(`OpenRouter API error: ${response.status} - ${errorBody}`);
+    throw new Error(`xAI API error: ${response.status} - ${errorBody}`);
   }
 
   const result = await response.json();

@@ -9,7 +9,7 @@ A professional, enterprise-grade log analysis tool powered by **Google Gemini AI
 ## ?? Features
 
 ### Core Functionality
-- ?? **AI-Powered Analysis** - Supports **Google Gemini Pro**, **Azure OpenAI**, and **OpenRouter (GPT-3.5-Turbo)**
+- ?? **AI-Powered Analysis** - Supports **Google Gemini Pro**, **Azure OpenAI**, **OpenRouter**, and **xAI (Grok)**
 - ? **Multi-Log Type Support** - Supports .NET, Node.js, Python, Docker, Kubernetes, and more
 - ? **Pattern Detection** - Pre-analyzes logs for common issues (NullReference, Database, Auth, Timeouts)
 - ? **Structured Results** - Clean JSON responses with errors, warnings, and info categorized

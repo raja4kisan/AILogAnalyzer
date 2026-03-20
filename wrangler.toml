@@ -2,8 +2,12 @@ name = "ailog08analyzer"
 main = "worker.js"
 compatibility_date = "2024-03-20"
 
-[vars]
-OPENROUTER_MODEL = "openai/gpt-3.5-turbo"
+[assets]
+directory = "./wwwroot"
+binding = "ASSETS"
 
-# Note: Set OPENROUTER_API_KEY as a secret in the Cloudflare Dashboard
-# or via `wrangler secret put OPENROUTER_API_KEY`
+[vars]
+XAI_MODEL = "grok-4-1-fast"
+
+# Note: Set XAI_API_KEY as a secret in the Cloudflare Dashboard
+# or via `wrangler secret put XAI_API_KEY`
