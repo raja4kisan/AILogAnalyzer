@@ -15,8 +15,8 @@ builder.Services.AddOpenApi();
 // Add HttpClient
 builder.Services.AddHttpClient();
 
-// Register services - Using xAI (Grok)
-builder.Services.AddScoped<ILogAnalyzerService, XAILogAnalyzerService>();
+// Register services - Using OpenRouter AI
+builder.Services.AddScoped<ILogAnalyzerService, OpenRouterLogAnalyzerService>();
 
 // Add CORS
 builder.Services.AddCors(options =>

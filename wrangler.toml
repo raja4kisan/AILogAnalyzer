@@ -7,7 +7,7 @@ directory = "./wwwroot"
 binding = "ASSETS"
 
 [vars]
-XAI_MODEL = "grok-4-1-fast"
+OPENROUTER_MODEL = "openai/gpt-3.5-turbo"
 
-# Note: Set XAI_API_KEY as a secret in the Cloudflare Dashboard
-# or via `wrangler secret put XAI_API_KEY`
+# Note: Set OPENROUTER_API_KEY as a secret in the Cloudflare Dashboard
+# or via `wrangler secret put OPENROUTER_API_KEY`
