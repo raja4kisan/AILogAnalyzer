@@ -15,8 +15,8 @@ builder.Services.AddOpenApi();
 // Add HttpClient
 builder.Services.AddHttpClient();
 
-// Register services - Using Azure OpenAI instead of Gemini
-builder.Services.AddScoped<ILogAnalyzerService, AzureOpenAILogAnalyzerService>();
+// Register services - Using DeepSeek AI
+builder.Services.AddScoped<ILogAnalyzerService, DeepSeekLogAnalyzerService>();
 
 // Add CORS
 builder.Services.AddCors(options =>

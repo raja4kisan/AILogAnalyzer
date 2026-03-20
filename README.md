@@ -9,7 +9,7 @@ A professional, enterprise-grade log analysis tool powered by **Google Gemini AI
 ## ?? Features
 
 ### Core Functionality
-- ? **AI-Powered Analysis** - Uses Google Gemini Pro for intelligent log analysis
+- ?? **AI-Powered Analysis** - Supports **Google Gemini Pro**, **Azure OpenAI**, and **DeepSeek AI**
 - ? **Multi-Log Type Support** - Supports .NET, Node.js, Python, Docker, Kubernetes, and more
 - ? **Pattern Detection** - Pre-analyzes logs for common issues (NullReference, Database, Auth, Timeouts)
 - ? **Structured Results** - Clean JSON responses with errors, warnings, and info categorized
@@ -241,7 +241,10 @@ Log Analyzer AI/
   },
   "AllowedHosts": "*",
   "Gemini": {
-    "ApiKey": "YOUR_API_KEY_HERE"
+    "ApiKey": "YOUR_GEMINI_API_KEY_HERE"
+  },
+  "DeepSeek": {
+    "ApiKey": "YOUR_DEEPSEEK_API_KEY_HERE"
   }
 }
 ```
