@@ -15,8 +15,8 @@ builder.Services.AddOpenApi();
 // Add HttpClient
 builder.Services.AddHttpClient();
 
-// Register services - Using DeepSeek AI
-builder.Services.AddScoped<ILogAnalyzerService, DeepSeekLogAnalyzerService>();
+// Register services - Using OpenRouter AI
+builder.Services.AddScoped<ILogAnalyzerService, OpenRouterLogAnalyzerService>();
 
 // Add CORS
 builder.Services.AddCors(options =>

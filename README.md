@@ -9,7 +9,7 @@ A professional, enterprise-grade log analysis tool powered by **Google Gemini AI
 ## ?? Features
 
 ### Core Functionality
-- ?? **AI-Powered Analysis** - Supports **Google Gemini Pro**, **Azure OpenAI**, and **DeepSeek AI**
+- ?? **AI-Powered Analysis** - Supports **Google Gemini Pro**, **Azure OpenAI**, and **OpenRouter (GPT-3.5-Turbo)**
 - ? **Multi-Log Type Support** - Supports .NET, Node.js, Python, Docker, Kubernetes, and more
 - ? **Pattern Detection** - Pre-analyzes logs for common issues (NullReference, Database, Auth, Timeouts)
 - ? **Structured Results** - Clean JSON responses with errors, warnings, and info categorized
@@ -275,10 +275,18 @@ COPY ./publish .
 ENTRYPOINT ["dotnet", "LogAnalyzer.API.dll"]
 ```
 
-### Azure Deployment
-1. Create an Azure App Service
-2. Configure the Gemini API key in Application Settings
-3. Deploy using Azure DevOps or GitHub Actions
+### Cloudflare Worker Deployment (Recommended for cloudflare)
+1.  **Configure API Key**:
+    ```bash
+    wrangler secret put OPENROUTER_API_KEY
+    ```
+    (Enter your OpenRouter key when prompted)
+2.  **Deploy Worker**:
+    ```bash
+    wrangler deploy
+    ```
+3.  **Deploy Frontend**:
+    Upload the `wwwroot` folder to Cloudflare Pages or configure the worker to serve it.
 
 ## ?? Performance
 
